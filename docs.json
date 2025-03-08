@@ -3,77 +3,66 @@
   "theme": "mint",
   "name": "Arcadia Plugins",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#4962bf",
+    "light": "#4962bf",
+    "dark": "#4962bf"
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Guides",
+        "language": "en",
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Join our Discord",
+              "href": "https://mintlify.com/blog",
+              "icon": "discord"
+            }
+          ]
+        },
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Arcadia Plugins",
             "pages": [
-              "introduction",
-              "quickstart",
-              "development"
+              "en/introduction"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Timed Wings",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "en/timedwings/installation"
             ]
           }
         ]
       },
       {
-        "tab": "API Reference",
+        "language": "tr",
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Discord Sunucumuza Katıl",
+              "href": "https://discord.gg/RUtvrHRXRz",
+              "icon": "discord"
+            }
+          ]
+        },
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "Arcadia Plugins",
             "pages": [
-              "api-reference/introduction"
+              "tr/introduction"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Timed Wings",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "tr/timedwings/installation"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -81,22 +70,17 @@
   },
   "navbar": {
     "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Discord",
+      "href": "https://discord.gg/RUtvrHRXRz"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "discord": "https://discord.gg/RUtvrHRXRz",
+      "github": "https://github.com/arcadiatc"
     }
   }
 }
