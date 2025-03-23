@@ -1,0 +1,113 @@
+This page explains how to configure TimedWings using the `config.yml` file generated after first launch.
+
+You can find the file at:
+
+```bash
+/plugins/TimedWings/config.yml
+```
+
+---
+
+## 🌐 Language Settings
+
+TimedWings supports multi-language through locale-based `.yml` files.
+
+```yaml
+language:
+  default: "en_us"
+  use-client-language:
+    status: true
+    fallback-language: "en_us"
+```
+
+- **default**: Language used by default.
+- **use-client-language.status**: If `true`, uses the player's Minecraft client language.
+- **fallback-language**: Used when translation for the player's language is missing.
+
+> 📁 Place language files in the `/languages` folder using locale codes
+> (e.g., `en_us.yml`, `tr_tr.yml`, `de_de.yml`)
+
+More locale codes: [Minecraft Language List](https://minecraft.fandom.com/wiki/Language)
+
+---
+
+## 💾 Storage Settings
+
+```yaml
+storage:
+  type: "yaml"
+```
+
+- Available types: `yaml`, `sqlite`, `mysql`, `h2`
+
+### MySQL Configuration
+
+Only required if you are using `mysql` as your storage type:
+
+```yaml
+mysql:
+  host: "localhost"
+  port: 3306
+  database: "timedwings"
+  username: "timedwings"
+  password: "timedwings"
+  table: "timedwings"
+```
+
+> 🧠 MySQL is required for multi-server setups to sync player data across instances.
+
+---
+
+## 🔐 Unlimited Flight Permissions
+
+```yaml
+permissions:
+  - 'timedwings.unlimited'
+  - 'essentials.fly'
+  - 'cmi.command.fly'
+```
+
+Players with any of these permissions will **not be limited by time** and can fly freely.
+
+---
+
+## 🌍 Disabled Worlds
+
+```yaml
+disabled-worlds:
+  - 'disabled-world'
+```
+
+Players in these worlds can fly without time limits (if they have permission).
+
+---
+
+## ✈️ Auto-Fly
+
+```yaml
+auto-fly: true
+```
+
+If enabled, players will automatically enter flight mode when entering a flyable area (with flight time available).
+
+---
+
+## 📊 Action Bar Display
+
+```yaml
+action-bar:
+  enabled: true
+  duration-format: '{h} {m} {s}'
+  always-display: false
+```
+
+- **enabled**: Toggle action bar messages on/off
+- **duration-format**: Format of the remaining time in the action bar
+Placeholders: `{y}`, `{mo}`, `{d}`, `{h}`, `{m}`, `{s}`
+- **always-display**: If `true`, shows the action bar even when not flying
+
+> ✏️ To change the message appearance (colors, icons, etc.), edit your selected language file in `/languages/`.
+
+---
+
+Need help? Join our [Discord](https://discord.gg/yourserver)

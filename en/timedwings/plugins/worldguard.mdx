@@ -1,0 +1,62 @@
+---
+title: WorldGuard
+---
+#
+
+TimedWings offers built-in support for **WorldGuard**, allowing server owners to control where players can or cannot fly using region flags.
+
+---
+
+## ✅ What does it do?
+
+By default, TimedWings allows players to fly based on their remaining time.
+With WorldGuard integration, you can **allow or deny flight access** in specific regions using a custom flag:
+`timedwings-fly`
+
+---
+
+## 🛠️ Setup Instructions
+
+To use the WorldGuard integration:
+
+1. Make sure **WorldGuard** is installed on your server.
+2. Start your server **once** to allow TimedWings to register the custom flag.
+3. **Stop and restart** the server after the first boot — this ensures WorldGuard loads the new flag properly.
+
+> ⚠️ A simple `/reload` is **not enough**. You must fully restart the server.
+
+---
+
+## 📌 Usage
+
+After the flag has been registered, you can manage flight permissions per region:
+
+```bash
+/rg flag <region-name> timedwings-fly allow
+/rg flag <region-name> timedwings-fly deny
+```
+### 🔹 allow
+Players will be able to use their timed flight **inside the region**.
+
+### 🔸 deny
+Players will **not** be able to use TimedWings flight **even if they have time left**.
+
+---
+
+## 🔍 Example
+
+Let’s say you want to prevent flight in your PvP Arena:
+
+```bash
+/rg flag pvp-arena timedwings-fly deny
+```
+
+Now, even VIP players with flight time remaining will **not** be able to fly in that region.
+
+---
+
+## 🧪 Debugging Tips
+
+- If the flag doesn't work, make sure the plugin was fully restarted at least once.
+- Ensure the player is **actually inside** a WorldGuard region.
+- Use `/rg info <region>` to view current flags.

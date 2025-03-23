@@ -23,15 +23,23 @@
         },
         "groups": [
           {
-            "group": "Arcadia Plugins",
+            "group": "\uD83E\uDDCA Arcadia Plugins",
             "pages": [
               "en/introduction"
             ]
           },
           {
-            "group": "Timed Wings",
+            "group": "\uD83E\uDEB6 Timed Wings",
             "pages": [
-              "en/timedwings/installation"
+              "en/timedwings/installation",
+              "en/timedwings/configuration",
+              {
+                "group": "Supported Plugins",
+                "pages": [
+                  "en/timedwings/plugins/fabledskyblock",
+                  "en/timedwings/plugins/worldguard"
+                ]
+              }
             ]
           }
         ]
