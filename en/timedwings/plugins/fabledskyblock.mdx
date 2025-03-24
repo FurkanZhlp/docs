@@ -1,3 +1,37 @@
 ---
 title: FabledSkyBlock
 ---
+
+TimedWings offers **automatic integration** with FabledSkyBlock.
+If the plugin detects that FabledSkyBlock is installed on the server, integration is enabled by default — **no manual setup required**.
+
+---
+
+## 🔗 What does this integration do?
+
+- Adds a new **island setting**: `Flight`
+- Island owners can toggle this setting to allow or deny flight to members on their island
+- Only players with flight time will be able to fly, and only if the island setting is enabled
+
+This provides **full control** to island owners over who can fly on their land.
+
+---
+
+## 📝 Language Configuration
+
+To change the display name of the island flight setting, you must update the FabledSkyBlock language configuration file.
+
+Add or edit the following section in your FabledSkyBlock language file:
+
+```yaml
+Menu:
+  Settings:
+    Default:
+      Item:
+        Setting:
+          TimedWingsFly:
+            Displayname: '&aFlight'
+```
+
+> 🗣️ This configuration **must be set inside FabledSkyBlock’s language file**, not TimedWings.
+> The `Displayname` is what players see in the island settings menu.
