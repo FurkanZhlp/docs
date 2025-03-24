@@ -33,6 +33,7 @@
             "pages": [
               "en/timedwings/installation",
               "en/timedwings/configuration",
+              "en/timedwings/placeholder",
               {
                 "group": "Supported Plugins",
                 "pages": [
@@ -40,32 +41,6 @@
                   "en/timedwings/plugins/worldguard"
                 ]
               }
-            ]
-          }
-        ]
-      },
-      {
-        "language": "tr",
-        "global": {
-          "anchors": [
-            {
-              "anchor": "Discord Sunucumuza Katıl",
-              "href": "https://discord.gg/RUtvrHRXRz",
-              "icon": "discord"
-            }
-          ]
-        },
-        "groups": [
-          {
-            "group": "Arcadia Plugins",
-            "pages": [
-              "tr/introduction"
-            ]
-          },
-          {
-            "group": "Timed Wings",
-            "pages": [
-              "tr/timedwings/installation"
             ]
           }
         ]

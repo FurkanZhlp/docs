@@ -1,0 +1,113 @@
+---
+title: PlaceholderAPI Support
+---
+
+TimedWings includes built-in support for **PlaceholderAPI**, allowing you to display flight time and flight status in scoreboards, menus, tablists, and other plugin GUIs.
+
+---
+
+## ✅ Enabling Placeholder Support
+
+If PlaceholderAPI is installed, TimedWings will automatically detect and register its placeholders.
+
+No extra configuration is needed.
+
+You can confirm it's working by checking your console:
+
+```
+[TimedWings - INFO] PlaceholderAPI detected, registering placeholders...
+```
+
+---
+
+## 📌 Available Placeholders
+
+### `%timedwings_total_flight_time%`
+
+Returns the **formatted remaining flight time** for the player.
+
+- Example output: `15m 30s`
+- Format is configurable via language files:
+
+```yaml
+placeholder:
+  timedwings_total_flight_time:
+    time: '{y} {mo} {d} {h} {m} {s}'
+    no-time: '&cNo Time Left'
+```
+
+If the player has **no flight time**, the `no-time` message is shown instead.
+
+---
+
+### `%timedwings_total_flight_time_seconds%`
+
+Returns the **raw remaining flight time in seconds**.
+
+- Example output: `930`
+- Format also configurable via:
+
+```yaml
+placeholder:
+  timedwings_total_flight_time_seconds:
+    time: '{seconds}'
+    no-time: '&cNo Time Left'
+```
+
+This is useful for more precise displays, like countdown timers or progress bars.
+
+---
+
+## ⏱️ Time Format Tokens
+
+TimedWings uses a custom formatting system to represent flight time. You can structure the time format using the following tokens:
+
+| Key     | Description              | Example Output       |
+|---------|--------------------------|----------------------|
+| `{y}`   | Years                    | `1 year`, `2 years`  |
+| `{mo}`  | Months                   | `3 months`           |
+| `{d}`   | Days                     | `4 days`             |
+| `{h}`   | Hours                    | `5 hours`            |
+| `{m}`   | Minutes                  | `6 minutes`          |
+| `{s}`   | Seconds                  | `30 seconds`         |
+
+These tokens are replaced dynamically based on the player's remaining time and are **localized** using the player’s selected language file.
+
+For example:
+
+```yaml
+general:
+  time:
+    hour: "hour"
+    hours: "hours"
+    minute: "minute"
+    minutes: "minutes"
+    ...
+```
+
+If a token has no value (e.g., 0 days), it will be removed from the final output to keep the display clean.
+
+> You can reorder or remove tokens depending on how much detail you want to show (e.g., `{h} {m}`).
+
+---
+
+## 🎨 Customizing Placeholder Output
+
+Placeholder formats are fully customizable in the selected language file (`/languages/<locale>.yml`).
+
+You can change:
+- The structure (`{h} {m} {s}`, etc.)
+- The messages shown when time is `0`
+- The color codes using `&` formatting
+
+> ℹ️ Placeholders use the player's active language setting, so multi-language support applies here as well.
+
+---
+
+## 🧪 Testing Placeholders
+
+You can test placeholders using PlaceholderAPI’s test command:
+
+```bash
+/papi parse <player> %timedwings_total_flight_time%
+```
