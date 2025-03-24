@@ -40,7 +40,8 @@
                   "en/timedwings/plugins/fabledskyblock",
                   "en/timedwings/plugins/worldguard"
                 ]
-              }
+              },
+              "en/timedwings/developer_api"
             ]
           }
         ]

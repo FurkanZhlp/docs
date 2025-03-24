@@ -1,0 +1,103 @@
+---
+title: Developer API
+---
+
+TimedWings provides a simple and extensible developer API, allowing you to manage player flight time, check flying status, and integrate with your own plugins.
+
+---
+
+## ✅ Getting the Plugin Instance
+
+Access the main plugin instance via:
+
+```java
+TimedWings plugin = TimedWings.getInstance();
+```
+
+---
+
+## 🧍 Accessing Player Flight Data
+
+To access or modify a player's flight data, use the `PlayerDataManager`:
+
+```java
+PlayerDataManager dataManager = plugin.getPlayerDataManager();
+PlayerData data = dataManager.getPlayerData(player);
+```
+
+---
+
+## 🧠 PlayerData API
+
+The `PlayerData` class represents a player's flight status and timers.
+
+### 📌 Getters
+
+```java
+UUID getPlayerUUID();                // Returns the player's UUID
+int getRemainingFlightTime();       // Returns seconds of flight time left
+int getUsedFlightTime();            // Returns total flight time used
+boolean isFlying();                 // Whether the player is currently flying
+```
+
+### ✍️ Setters / Modifiers
+
+```java
+void setRemainingFlightTime(int seconds); // Set remaining time directly
+void addFlightTime(int seconds);          // Add seconds to remaining time
+void removeFlightTime(int seconds);       // Remove seconds from remaining time
+
+void setUsedFlightTime(int seconds);      // Set total used time
+void addUsedFlightTime(int seconds);      // Add to used time
+void removeUsedFlightTime(int seconds);   // Remove from used time
+
+void setFlying(boolean flying);           // Manually set flying status
+```
+
+---
+
+## 💾 Saving Data
+
+You can manually trigger a save of the player's data:
+
+```java
+data.save();
+```
+
+This uses the active `StorageProvider` (e.g., YAML, MySQL, etc.).
+
+---
+
+## 🛠️ Example: Give 10 minutes of flight
+
+```java
+PlayerData data = plugin.getPlayerDataManager().getPlayerData(player);
+data.addFlightTime(600); // 600 seconds = 10 minutes
+data.save();
+```
+
+---
+
+## 🔍 Example: Remove 30 seconds of flight
+
+```java
+PlayerData data = plugin.getPlayerDataManager().getPlayerData(player);
+data.removeFlightTime(30);
+```
+
+---
+
+## 🔄 Example: Reset Used Time
+
+```java
+PlayerData data = plugin.getPlayerDataManager().getPlayerData(player);
+data.setUsedFlightTime(0);
+```
+
+---
+
+## 💡 Notes
+
+- Time is always handled in **seconds**.
+- `save()` should be called after making changes if you want to persist them immediately.
+- If the storage system supports auto-saving or event-based saving, you may not need to call `save()` manually.
