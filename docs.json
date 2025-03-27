@@ -33,6 +33,7 @@
             "pages": [
               "en/timedwings/installation",
               "en/timedwings/configuration",
+              "en/timedwings/commands",
               "en/timedwings/placeholder",
               {
                 "group": "Supported Plugins",
